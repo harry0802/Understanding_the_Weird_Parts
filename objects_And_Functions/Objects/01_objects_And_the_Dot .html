@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物件和點</title>
+</head>
+<body>
+    <!-- 
+        * 物件：物件是一群「名稱/值的」組合， 而這些值也可以是另一個「名稱/值」的組合
+        * 而用另一個觀點去看物件，思考物件是如何存在於電腦記憶體中：
+          * 一個物件是被賦「名稱與值」的組合，而這個值是什麼？
+            物件可以有屬性與方法，所以物件可以有個原始的設定，而這叫做屬性「純值」。
+            一個物件還可以連接另一個物件成為子物件「而這也算是一個屬性」 因為值也可以是另一個「名稱/值」「或物件」的組合。
+            而物件裡面還可以有個「函數」，而在物件裡面的函數稱為「方法」，而函數依然還是函數，但他連結的是物件 因此稱為方法。
+        * 記憶體：
+            ＊核心物件有一個記憶體的「地址值」，可以參考到這些電腦記憶體的屬性和方法的地址值的空間，找到這些屬性和方法的所在。
+            ＊物件在記憶體中有個位置，他能參考其他相關東西的記憶位置，所以他知道那些不同屬性與方法在哪裡。
+            ＊js 找出記憶體位置，那些物件的屬性以及方法
+        
+        * [] 是運算子「計算取用成員運算子」
+            Computed Member Access	/ left-to-right /	… [ … ]
+            []運算子，可以找出物件的屬性和方法。
+            []運算子可以自己決定要拿取用哪種屬性。
+            最好還是用 「成員取用運算子」 . 使用起來比較容易
+
+        * .運算子也是個函數 「成員取用運算子」
+            Member Access / left-to-right / … . …
+            
+     -->
+    <script>
+        var obj = new Object();
+        // var obj = {
+            //     firstname:'a',
+            // }
+            
+        //此時物件便能參考到 firstnane 在記憶中的位置，並且知道他是純值的字串，這就是 名為firstnane 的屬性
+        obj ['firstname'] = 'a';
+        var fname = 'firstname';
+        /*
+        將物件本身輸出，回傳裡面的屬性
+        */ 
+        console.log(obj);
+        /*
+        []運算子會去obj裡面找到 firstname 的屬性名字 ，然後輸出值。
+        他把物件當作一個參數，然後把字串當作另一個參數，最後找到屬性，並回傳屬性裡的值。
+        */ 
+        console.log(obj[fname]);
+        /*
+        也可以利用 「.運算子」 來獲取屬性，.運算子也是個函數，
+            「成員取用運算子」 而目前的成員就是對象，所以他會幫你找到物件的屬性或是方法
+        */ 
+        console.log(obj.fname);
+
+        // 利用 「成員取用運算子」在對象裡面再創造，一個對象
+            obj.obj2 = new Object()
+            /*
+             先在 obj 裡面尋找 obj2 => 返回 obj.obj2 => .obj2 後面尋找 firstname2 => 找不到並自動建立屬性，並賦予值
+              * 物件本身和屬性，方法都在記憶體裡面，而 . [] 只是函數，一個運算子，取出資訊的方式
+
+            */ 
+            obj.obj2.firstname2 = 'a2';
+            obj.obj2.city = 'city'
+            // 以下兩者都是一樣的，兩個不一養的運算子，做著同樣的事情
+            console.log(obj.obj2.firstname2)
+            console.log(obj['obj2']['firstname2'])
+
+
+    </script>
+</body>
+</html>
