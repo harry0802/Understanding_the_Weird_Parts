@@ -5,7 +5,10 @@
 /**/  
 /**/ 
 /**/ 
-/**/ 
+/**/
+import _ from "../../underscore-esm";
+
+ 
 
 // function arr_saharedUse(arr1,arr2){
 //     const firstGroup = arr1;
@@ -79,5 +82,7 @@ console.log(checkLength2(2))
 
 console.log(rt,rt2,rt3,rt4,rt5,rt6)
 console.log(rt)
+
+
 
 
