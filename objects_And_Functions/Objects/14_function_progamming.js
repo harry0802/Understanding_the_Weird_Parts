@@ -63,11 +63,6 @@ const checkLength2 = function (Length){
 }.bind(this,Length)
 };
 
-const checkLength3 =  function (Length){
-    return function(arr){
-        return   arr > Length
-    }.bind(this,Length)
- }
 
 
  const rt = arr_saharedUse2([2,4,6],function(item){ return item * 2});
@@ -76,11 +71,11 @@ const rt3 = arr_saharedUse2([2,4,6],function(item){ return item + 'hellow'});
 const rt4 = arr_saharedUse2([2,4,6],function(item){ return item - 1});
 
 const rt5 = arr_saharedUse2([2,4,6],checkLength2(5));
-const rt6 = arr_saharedUse2([2,4,6],checkLength3(5));
+
 
 console.log(checkLength2(2))
 
-console.log(rt,rt2,rt3,rt4,rt5,rt6)
+console.log(rt,rt2,rt3,rt4,rt5)
 console.log(rt)
 
 
